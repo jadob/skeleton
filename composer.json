@@ -1,0 +1,22 @@
+{
+  "name": "jadob/skeleton",
+  "description": "Jadob framework skeleton.",
+  "type": "project",
+  "license": "MIT",
+  "autoload": {
+    "psr-0": {
+      "App\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "pizzaminded",
+      "email": "miki@appvende.net"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "jadob/jadob": "dev-master",
+    "symfony/translation": "^4.1@dev"
+  }
+}

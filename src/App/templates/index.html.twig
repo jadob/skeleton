@@ -1,0 +1,5 @@
+{% extends '@App/base.html.twig' %}
+{% block content %}
+    <h1>Hi. I am example controller. You can edit me. Or delete.</h1>
+    <p><a href="{{ path('hello_with_parameter', {name: 'Mike'}) }}">Here</a> you can check another one.</p>
+{% endblock %}
