@@ -16,7 +16,6 @@
   ],
   "minimum-stability": "dev",
   "require": {
-    "jadob/jadob": "dev-master",
-    "symfony/translation": "^4.1@dev"
+    "jadob/jadob": "dev-master"
   }
 }
