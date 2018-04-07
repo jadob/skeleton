@@ -1,2 +1,2 @@
-# slice-skeleteon
-Slice project skeleton
+# jadob-skeleton
+Jadob framework project skeleton.
