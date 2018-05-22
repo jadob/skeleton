@@ -1,31 +1,27 @@
 <?php
 
-class Bootstrap
+use Jadob\Core\AbstractBootstrap;
+
+/**
+ * Class Bootstrap
+ * @author pizzaminded <miki@appvende.net>
+ * @license MIT
+ */
+class Bootstrap extends AbstractBootstrap
 {
-
-    public function getRootDir()
-    {
-        return __DIR__;
-    }
-
-    public function getPublicDir()
-    {
-        return __DIR__ . '/public';
-    }
-
-    public function getConfigDir()
-    {
-        return $this->getRootDir() . '/config';
-    }
-
-    public function getCacheDir()
-    {
-        return $this->getRootDir() . '/var';
-    }
-
-    public function getServiceProviders()
+    /**
+     * {@inheritdoc}
+     */
+    public function getServiceProviders(): array
     {
         return [];
     }
 
+    /**
+     * {@inheritdoc}
+     */
+    public function getRootDir(): string
+    {
+        return __DIR__;
+    }
 }
