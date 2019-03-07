@@ -1,45 +1,30 @@
 <?php
 
 return [
-    'globals' => [
-        'locale' => 'en'
+    'router' => [
+        'routes' => include __DIR__.'/routes.php'
     ],
     'framework' => [
-        'error_handler' => [
-            'custom_prod_controller' => null
+        'dev' => [
+            'profiler' => true,
+            'pretty_print_json_responses' => true,
         ],
-    ],
-    'dbal' => [
-        'dbname' => '%{database_name}',
-        'user' => '%{database_user}',
-        'password' => '%{database_pass}',
-        'host' => '%{database_host}',
-        'driver' => 'pdo_mysql',
-        'charset' => 'utf8',
-    ],
-    'database' => [
-        'models' => []
-    ],
-    'schema_manager' => [
-        'schema' => include __DIR__ . '/schema.php',
-        'cli_only' => false
-    ],
-    'router' => [
-        //'locale_prefix' => '/{_locale}',
-        'routes' => include __DIR__ . '/routes.php',
-        'case_sensitive' => false,
-    ],
-    'twig' => [
-        'strict_variables' => true,
-        'cache' => false,
-        'templates_paths' => [
-            'App' => '/src/App/templates'
+        'security' => [
 
         ]
     ],
-    'translator' => [
-        'locale' => 'en',
-        'sources' => []
+    'twig' => [
+        'templates_paths' => [
+            'App' => 'src/App/templates',
+            //'__main__' => 'vendor/symfony/twig-bridge/Resources/views/Form'
+        ],
+        'cache' => false,
+        'strict_variables' => true,
+        'globals' => [
+            'php_version' => PHP_VERSION
+        ]
     ],
-    'security' => []
+    'sf_forms' => [
+        'forms' => ['bootstrap_4_horizontal_layout.html.twig']
+    ],
 ];
