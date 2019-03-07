@@ -2,26 +2,41 @@
 
 namespace App\Controller;
 
-use Jadob\MVC\Controller\AbstractController;
+use Jadob\Core\ControllerUtils;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * This is example controller.
- * Extending AbstractController is not required, but this gives you some additional methods that you can use.
  * @package App\Controller
  * @author pizzaminded <miki@appvende.net>
  * @license MIT
  */
-class HelloController extends AbstractController
+class HelloController
 {
+
     /**
-     * Action MUST have 'Action' suffix, and it MUST return Response class.
+     * @var ControllerUtils
+     */
+    protected $utils;
+
+    /**
+     * HelloController constructor.
+     * @param ControllerUtils $utils
+     */
+    public function __construct(ControllerUtils $utils)
+    {
+        $this->utils = $utils;
+    }
+
+
+    /**
+     * Action MUST return Response class.
      * @throws \InvalidArgumentException
-     * @throws \Jadob\Container\Exception\ServiceNotFoundException
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function indexAction()
+    public function index()
     {
-        return $this->renderTemplateResponse('@App/index.html.twig');
+        return new Response($this->utils->renderTemplate('@App/index.html.twig'));
     }
 
     /**
@@ -29,13 +44,12 @@ class HelloController extends AbstractController
      * @param string $name
      * @return \Symfony\Component\HttpFoundation\Response
      * @throws \InvalidArgumentException
-     * @throws \Jadob\Container\Exception\ServiceNotFoundException
      */
-    public function helloAction($name)
+    public function hello($name)
     {
-        return $this->renderTemplateResponse('@App/hello.html.twig',[
+        return new Response($this->utils->renderTemplate('@App/hello.html.twig', [
             'name' => $name
-        ]);
+        ]));
 
     }
 
