@@ -14,7 +14,12 @@ class Bootstrap extends AbstractBootstrap
      */
     public function getServiceProviders(): array
     {
-        return [];
+        return [
+            \Jadob\SymfonyConsoleBridge\ServiceProvider\ConsoleProvider::class,
+            \Jadob\Core\ServiceProvider\FrameworkServiceProvider::class,
+            \Jadob\Router\ServiceProvider\RouterServiceProvider::class,
+            \Jadob\TwigBridge\ServiceProvider\TwigServiceProvider::class,
+        ];
     }
 
     /**
