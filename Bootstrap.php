@@ -18,7 +18,7 @@ class Bootstrap extends AbstractBootstrap
             \Jadob\SymfonyConsoleBridge\ServiceProvider\ConsoleProvider::class,
             \Jadob\Core\ServiceProvider\FrameworkServiceProvider::class,
             \Jadob\Router\ServiceProvider\RouterServiceProvider::class,
-            \Jadob\TwigBridge\ServiceProvider\TwigServiceProvider::class,
+            \Jadob\Bridge\Twig\ServiceProvider\TwigServiceProvider::class
         ];
     }
 

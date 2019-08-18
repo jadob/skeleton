@@ -1,12 +1,21 @@
 body {
     font-family: "Open Sans", sans-serif;
+    background: #e2e1e0;
 }
 
-.app-container {
-    width: 40%;
+.card {
+    background: #fff;
+    border-radius: 2px;
+    display: block;
+    width: 450px;
+    color: #424242;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     margin-left: auto;
     margin-right: auto;
-    padding-top: 0;
-    padding-left: 10px;
-    border-left: 5px solid #95A5A6;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.lenny {
+    font-size: 56px;
 }

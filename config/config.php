@@ -2,17 +2,9 @@
 
 return [
     'router' => [
-        'routes' => include __DIR__.'/routes.php'
-    ],
-    'framework' => [
-        'dev' => [
-            'profiler' => true,
-            'pretty_print_json_responses' => true,
-        ],
-        'security' => [
 
-        ]
     ],
+
     'twig' => [
         'templates_paths' => [
             'App' => 'src/App/templates',

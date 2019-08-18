@@ -8,12 +8,6 @@
       "App\\": "src/"
     }
   },
-  "authors": [
-    {
-      "name": "pizzaminded",
-      "email": "miki@appvende.net"
-    }
-  ],
   "minimum-stability": "dev",
   "require": {
     "jadob/jadob": "dev-master"
