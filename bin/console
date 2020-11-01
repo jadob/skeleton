@@ -8,9 +8,7 @@ require_once __DIR__.'/../Bootstrap.php';
 
 $bootstrap = new Bootstrap();
 
-$kernel = new Kernel('dev', $bootstrap);
-
-/** @var \Symfony\Component\Console\Application $console */
-$console = $kernel->getContainer()->get('console');
-
-$console->run();
+$kernel = new \Jadob\Core\Kernel('dev', new Bootstrap());
+$builder = $kernel->getContainerBuilder();
+$kernel->setContainer($builder->build($kernel->getConfig()->toArray()));
+$kernel->getContainer()->get('console')->run();
