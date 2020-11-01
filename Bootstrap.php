@@ -9,16 +9,13 @@ use Jadob\Core\AbstractBootstrap;
  */
 class Bootstrap extends AbstractBootstrap
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function getServiceProviders(): array
+
+    public function getServiceProviders(string $env): array
     {
         return [
             \Jadob\SymfonyConsoleBridge\ServiceProvider\ConsoleProvider::class,
-            \Jadob\Core\ServiceProvider\FrameworkServiceProvider::class,
             \Jadob\Router\ServiceProvider\RouterServiceProvider::class,
-            \Jadob\Bridge\Twig\ServiceProvider\TwigServiceProvider::class
+            \Jadob\Bridge\Twig\ServiceProvider\TwigProvider::class
         ];
     }
 

@@ -1,7 +1,7 @@
 <?php
 
-if (\version_compare(PHP_VERSION, '7.2.0') < 0) {
-    die('Sorry! Jadob need at least PHP 7.2 to work properly.');
+if (\version_compare(PHP_VERSION, '7.4.0') < 0) {
+    die('Sorry! Jadob need at least PHP 7.4 to work properly.');
 }
 
 require_once __DIR__.'/../vendor/autoload.php';

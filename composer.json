@@ -8,8 +8,7 @@
       "App\\": "src/"
     }
   },
-  "minimum-stability": "dev",
   "require": {
-    "jadob/jadob": "dev-master"
+    "jadob/jadob": "0.1.2"
   }
 }

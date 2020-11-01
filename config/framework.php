@@ -1,11 +1,7 @@
 <?php
 
 return [
-    'dev' => [
-        'profiler' => true,
-        'pretty_print_json_responses' => true,
-    ],
-    'security' => [
-
+    'dispatcher' => [
+        'autowire_controller_arguments' => true
     ]
 ];
