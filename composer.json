@@ -9,6 +9,7 @@
     }
   },
   "require": {
-    "jadob/jadob": "0.1.2"
+    "php": "^8",
+    "jadob/jadob": "^0.2"
   }
 }
