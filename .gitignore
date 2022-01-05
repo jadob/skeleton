@@ -1,4 +1,7 @@
+# Vendors and caches
 /vendor/
 /var/
-/composer.lock
-/.idea/
+
+# IDE files
+/.idea
+
