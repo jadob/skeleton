@@ -3,12 +3,11 @@
 
 use Jadob\Core\Kernel;
 
-require_once __DIR__.'/../vendor/autoload.php';
-require_once __DIR__.'/../Bootstrap.php';
+require_once __DIR__.'/../boot.php';
 
 $bootstrap = new Bootstrap();
 
-$kernel = new \Jadob\Core\Kernel('dev', new Bootstrap());
+$kernel = new Kernel('dev', new Bootstrap());
 $builder = $kernel->getContainerBuilder();
 $kernel->setContainer($builder->build($kernel->getConfig()->toArray()));
 $kernel->getContainer()->get('console')->run();
