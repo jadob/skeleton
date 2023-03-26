@@ -10,6 +10,6 @@
   },
   "require": {
     "php": "^8",
-    "jadob/jadob": "^0.2"
+    "jadob/jadob": "^0.4.14"
   }
 }
