@@ -1,5 +1,6 @@
 <?php
 
+use Jadob\Framework\Application;
 use Symfony\Component\HttpFoundation\Request;
 
 if (\version_compare(PHP_VERSION, '8.0.0') < 0) {
@@ -8,10 +9,16 @@ if (\version_compare(PHP_VERSION, '8.0.0') < 0) {
 
 require_once __DIR__.'/../boot.php';
 
+
 $bootstrap = new Bootstrap();
-$request = Request::createFromGlobals();
+$request = Symfony\Component\HttpFoundation\Request::createFromGlobals();
 
-
-$kernel = new \Jadob\Core\Kernel('dev', $bootstrap);
-$kernel->execute($request)->send();
+$app = new Application(
+    $_ENV['APP_ENV'],
+    new Bootstrap(),
+    [],
+    []
+);
+$app->handleWebRequest($request)->send();
+$app->terminate();
 

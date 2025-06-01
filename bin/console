@@ -1,13 +1,15 @@
 #!/usr/bin/env php
 <?php
 
-use Jadob\Core\Kernel;
+use Jadob\Framework\Application;
 
 require_once __DIR__.'/../boot.php';
 
-$bootstrap = new Bootstrap();
+$app = new Application(
+    $_ENV['APP_ENV'],
+    new Bootstrap(),
+    [],
+    []
+);
 
-$kernel = new Kernel('dev', new Bootstrap());
-$builder = $kernel->getContainerBuilder();
-$kernel->setContainer($builder->build($kernel->getConfig()->toArray()));
-$kernel->getContainer()->get('console')->run();
+$app->getConsole()->run();

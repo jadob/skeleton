@@ -9,11 +9,8 @@
     }
   },
   "require": {
-    "php": "^8",
-    "jadob/bridge-symfony-console": "^0.4.15",
-    "jadob/bridge-twig": "^0.4.15",
-    "jadob/router": "^0.4.15",
-    "jadob/core": "^0.4.15",
-    "symfony/dotenv": "^6.2"
+    "php": "^8.4",
+    "jadob/jadob": "^0.7.9",
+    "symfony/dotenv": "^7.3"
   }
 }
