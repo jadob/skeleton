@@ -16,7 +16,13 @@ require_once __DIR__ . '/Bootstrap.php';
  * If your app relies on some environment variables, pass it here.
  */
 Kernel::checkEnvsPresence([
-    'APP_ENV'
+    'APP_ENV',
+    'BASE_URL',
+    'DB_HOST',
+    'DB_PORT',
+    'DB_USER',
+    'DB_PASSWORD',
+    'DB_NAME',
 ]);
 
 /**

@@ -1,5 +1,9 @@
 <?php
 
+use Jadob\Bridge\Doctrine\Common\ServiceProvider\DoctrineCommonServiceProvider;
+use Jadob\Bridge\Doctrine\DBAL\ServiceProvider\DoctrineDBALProvider;
+use Jadob\Bridge\Doctrine\ORM\ServiceProvider\DoctrineORMProvider;
+use Jadob\Bridge\Doctrine\Persistence\ServiceProvider\DoctrinePersistenceProvider;
 use Jadob\Bridge\Twig\Module\TwigModule;
 use Jadob\Core\AbstractBootstrap;
 use Jadob\Framework\Module\FrameworkModule;
@@ -15,7 +19,11 @@ class Bootstrap extends AbstractBootstrap
             /**
              * @TODO: translator is provided because twig requires it - it should not, this is a known issue.
              */
-            new SymfonyTranslatorProvider()
+            new SymfonyTranslatorProvider(),
+            new DoctrinePersistenceProvider(),
+            new DoctrineCommonServiceProvider(),
+            new DoctrineDBALProvider(),
+            new DoctrineORMProvider($env)
         ];
     }
 
