@@ -17,7 +17,7 @@ class HelloController extends AbstractController
      * @throws \InvalidArgumentException
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function index()
+    public function __invoke(): Response
     {
         return new Response($this->renderTemplate('index.html.twig'));
     }

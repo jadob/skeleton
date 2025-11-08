@@ -1,10 +1,15 @@
 <?php
 
+use App\Controller\HelloController;
+
 return [
     'hello' => [
         'path' => '/',
-        'controller' => \App\Controller\HelloController::class,
-        'action' => 'index'
+        'handler' => HelloController::class,
+        'methods' => [
+            'GET'
+        ]
+
     ]
 ];
 
