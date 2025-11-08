@@ -13,6 +13,12 @@ composer install
 cp .env.dist .env
 ````
 
+This project comes with Docker Compose stack, start it:
+
+````shell
+docker compose up -d
+````
+
 When it is done, you can start the web server (in this case, the built-in PHP dev-server):
 
 ````shell
