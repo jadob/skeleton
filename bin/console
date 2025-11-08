@@ -1,15 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-use Jadob\Framework\Application;
 
-require_once __DIR__.'/../boot.php';
-
-$app = new Application(
-    $_ENV['APP_ENV'],
-    new Bootstrap(),
-    [],
-    []
-);
+$app = include __DIR__.'/../boot.php';
 
 $app->getConsole()->run();

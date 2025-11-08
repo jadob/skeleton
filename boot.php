@@ -3,6 +3,7 @@
  * Includes all required files and performs basic env checks before continuing with execution.
  */
 use Jadob\Core\Kernel;
+use Jadob\Framework\Application;
 use Symfony\Component\Dotenv\Dotenv;
 
 require_once __DIR__.'/vendor/autoload.php';
@@ -23,3 +24,10 @@ Kernel::checkEnvsPresence([
 Kernel::checkExtensionsPresence([
 
 ]);
+
+return  new Application(
+    $_ENV['APP_ENV'],
+    new Bootstrap(),
+    [],
+    []
+);
