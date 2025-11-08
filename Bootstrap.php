@@ -2,6 +2,7 @@
 
 use Jadob\Bridge\Doctrine\Common\ServiceProvider\DoctrineCommonServiceProvider;
 use Jadob\Bridge\Doctrine\DBAL\ServiceProvider\DoctrineDBALProvider;
+use Jadob\Bridge\Doctrine\Migrations\ServiceProvider\DoctrineMigrationsProvider;
 use Jadob\Bridge\Doctrine\ORM\ServiceProvider\DoctrineORMProvider;
 use Jadob\Bridge\Doctrine\Persistence\ServiceProvider\DoctrinePersistenceProvider;
 use Jadob\Bridge\Twig\Module\TwigModule;
@@ -23,7 +24,8 @@ class Bootstrap extends AbstractBootstrap
             new DoctrinePersistenceProvider(),
             new DoctrineCommonServiceProvider(),
             new DoctrineDBALProvider(),
-            new DoctrineORMProvider($env)
+            new DoctrineORMProvider($env),
+            //new DoctrineMigrationsProvider()
         ];
     }
 
