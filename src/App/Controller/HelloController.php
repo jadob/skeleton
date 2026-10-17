@@ -20,7 +20,10 @@ final readonly class HelloController
     ): Response
     {
         return new Response(
-            $twig->render('index.html.twig')
+            $twig->render('index.html.twig', [
+                'phpVersion' => PHP_VERSION,
+                'appEnv' => $_ENV['APP_ENV'],
+            ])
         );
     }
 

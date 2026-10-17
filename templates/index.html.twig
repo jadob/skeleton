@@ -1,7 +1,28 @@
 {% extends 'base.html.twig' %}
+
+{% block title %}Ready{% endblock %}
+
 {% block content %}
-   <div class="card">
-       <h1 class="lenny">(づ｡◕‿‿◕｡)づ</h1>
-       <p class="info-text">Everything is set up and ready for work.</p>
-   </div>
+<main class="welcome">
+    <header class="welcome-head">
+        <p class="mark">٩(◕‿◕｡)۶</p>
+        <p class="status">{{ appEnv }} · PHP {{ phpVersion }}</p>
+    </header>
+    <h1>Everything is set up<br>and ready for work.</h1>
+    <p class="lede">This page ships with the skeleton. The route, controller, and template below are the first things to replace.</p>
+    <dl class="steps">
+        <div>
+            <dt>Route</dt>
+            <dd><code>config/routes.php</code></dd>
+        </div>
+        <div>
+            <dt>Controller</dt>
+            <dd><code>src/<wbr>App/<wbr>Controller/<wbr>HelloController.php</code></dd>
+        </div>
+        <div>
+            <dt>Template</dt>
+            <dd><code>templates/index.html.twig</code></dd>
+        </div>
+    </dl>
+</main>
 {% endblock %}
