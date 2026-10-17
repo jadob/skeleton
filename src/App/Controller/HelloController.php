@@ -6,21 +6,22 @@ namespace App\Controller;
 
 use Jadob\Core\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Twig\Environment;
 
-/**
- * This is example controller. The parent abstract class is not required as it contains only helper methods.
- */
-final class HelloController extends AbstractController
+final readonly class HelloController
 {
-
     /**
      * Action MUST return Response class.
      * @return \Symfony\Component\HttpFoundation\Response
      * @throws \InvalidArgumentException|\Jadob\Container\Exception\ServiceNotFoundException
      */
-    public function __invoke(): Response
+    public function __invoke(
+        Environment $twig,
+    ): Response
     {
-        return new Response($this->renderTemplate('index.html.twig'));
+        return new Response(
+            $twig->render('index.html.twig')
+        );
     }
 
 }
