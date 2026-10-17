@@ -1,8 +1,9 @@
 # jadob/skeleton
 
-This is a minimal project structure for jadob/jadob `0.9.x` version, which includes:
+This is a minimal project structure for jadob/jadob `0.10.x` version, which includes:
 - Support for CLI commands
 - Twig Template engine
+- Doctrine ORM/DBAL + Migrations
 
 ## Getting started
 

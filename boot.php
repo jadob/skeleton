@@ -18,11 +18,7 @@ require_once __DIR__ . '/Bootstrap.php';
 Kernel::checkEnvsPresence([
     'APP_ENV',
     'BASE_URL',
-    'DB_HOST',
-    'DB_PORT',
-    'DB_USER',
-    'DB_PASSWORD',
-    'DB_NAME',
+    'DB_DSN',
 ]);
 
 /**

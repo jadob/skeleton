@@ -1,44 +1,18 @@
 <?php
 
-use Monolog\Logger;
+declare(strict_types=1);
 
-return [
-    'default_logger_channel' => 'default',
-    'default_error_logger_channel' => 'error',
-    'channels' => [
-        'error' => [
-            'stderr',
-            'default'
-        ],
-        'dispatcher' => [
-            'default'
-        ],
-        'event' => [
-            'default'
-        ],
-        'default' => [
-            'default',
-        ],
-    ],
+use Jadob\Framework\ServiceProvider\LoggerConfig;
+use Psr\Log\LogLevel;
 
-    'handlers' => [
-        'default' => [
-            'type' => 'stream',
-            'rotating' => true,
-            'level' => Logger::DEBUG,
-            'path' => '%log_dir%/app.log'
-        ],
-        'dbal' => [
-            'type' => 'stream',
-            'rotating' => true,
-            'level' => Logger::DEBUG,
-            'path' => '%log_dir%/dbal.log',
-        ],
-        'stderr' => [
-            'type' => 'stream',
-            'rotating' => false,
-            'level' => Logger::DEBUG,
-            'path' => 'php://stderr',
-        ]
-    ]
-];
+return static function (LoggerConfig $config): LoggerConfig {
+    $config
+        ->configureHandler('stderr')
+        ->withType('rotating_file')
+        ->withParameters([
+            'file' => __DIR__ . '/../var/logs/dev.log',
+        ])
+        ->withLevel(LogLevel::INFO);
+
+    return $config;
+};

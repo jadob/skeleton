@@ -2,6 +2,7 @@
 
 use Jadob\Bridge\Doctrine\Common\ServiceProvider\DoctrineCommonServiceProvider;
 use Jadob\Bridge\Doctrine\DBAL\ServiceProvider\DoctrineDBALProvider;
+use Jadob\Bridge\Doctrine\EventManager\ServiceProvider\DoctrineEventManagerServiceProvider;
 use Jadob\Bridge\Doctrine\Migrations\ServiceProvider\DoctrineMigrationsProvider;
 use Jadob\Bridge\Doctrine\ORM\ServiceProvider\DoctrineORMProvider;
 use Jadob\Bridge\Doctrine\Persistence\ServiceProvider\DoctrinePersistenceProvider;
@@ -21,11 +22,10 @@ class Bootstrap extends AbstractBootstrap
              * @TODO: translator is provided because twig requires it - it should not, this is a known issue.
              */
             new SymfonyTranslatorProvider(),
-            new DoctrinePersistenceProvider(),
-            new DoctrineCommonServiceProvider(),
             new DoctrineDBALProvider(),
-            new DoctrineORMProvider($env),
-            //new DoctrineMigrationsProvider()
+            new DoctrineORMProvider(),
+            new DoctrineMigrationsProvider(),
+            new DoctrineEventManagerServiceProvider()
         ];
     }
 
